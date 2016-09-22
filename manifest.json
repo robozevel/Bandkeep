@@ -1,0 +1,22 @@
+{
+    "version": "0.0.1",
+    "name": "Bandkeep",
+    "description": "Download albums from Bandcamp",
+    "author": "Guy Levi",
+    "manifest_version": 2,
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "run_at": "document_idle",
+            "matches": ["http://*/*", "https://*/*"],
+            "js": ["/main.js"]
+        }
+    ],
+    "permissions": [
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ]
+}
